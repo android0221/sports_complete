@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sports_complete/features/home/entities/entities.dart';
-import 'package:sports_complete/features/home/pages/sport_page.dart';
+import 'package:sports_complete/features/league/pages/league_page.dart';
 
 class LeagueItem extends StatelessWidget {
   final League league;
@@ -12,9 +12,7 @@ class LeagueItem extends StatelessWidget {
     return InkWell(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (context) => SportPage(name: league.name),
-        ),
+        MaterialPageRoute(builder: (context) => LeaguePage(league)),
       ),
       borderRadius: BorderRadius.circular(20),
       child: Container(

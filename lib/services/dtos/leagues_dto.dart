@@ -16,7 +16,7 @@ class LeaguesDto {
   factory LeaguesDto.fromJson(Map<String, dynamic> json) => LeaguesDto(
         league: (json['league'] as List<dynamic>?)
             ?.map((e) => LeagueDto.fromJson(e as Map<String, dynamic>))
-            .where((e) => e.defaultP != 0)
+            .where((e) => e.type != 'other')
             .toList(),
         important: json['important'] as int?,
         clearCache: json['clear_cache'] as int?,
@@ -24,9 +24,13 @@ class LeaguesDto {
       );
 
   List<League> toLeagues() {
-    return league
-            ?.map((e) => League(name: e.name ?? '', logoUrl: _logo(e.name)))
-            .toList() ??
+    return league?.map((e) {
+          return League(
+            name: e.name ?? '',
+            logoUrl: _logo(e.name),
+            tabTypes: e.list?.map((e) => e.toEntity()).toList() ?? [],
+          );
+        }).toList() ??
         [];
   }
 
@@ -55,6 +59,7 @@ class LeagueDto {
   int? creatTime;
   int? position;
   bool? yearListInner;
+  List<TabDto>? list;
 
   LeagueDto({
     this.name,
@@ -64,6 +69,7 @@ class LeagueDto {
     this.creatTime,
     this.position,
     this.yearListInner,
+    this.list,
   });
 
   factory LeagueDto.fromJson(Map<String, dynamic> json) => LeagueDto(
@@ -74,5 +80,25 @@ class LeagueDto {
         creatTime: json['creat_time'] as int?,
         position: json['position'] as int?,
         yearListInner: json['year_list_inner'] as bool?,
+        list: (json['list'] as List).map((e) => TabDto.fromJson(e)).toList(),
       );
+}
+
+class TabDto {
+  String? name;
+  String? url;
+
+  TabDto({
+    this.name,
+    this.url,
+  });
+
+  factory TabDto.fromJson(Map<String, dynamic> json) => TabDto(
+        name: json['name'] as String?,
+        url: json['url'] as String?,
+      );
+
+  TabType toEntity() {
+    return TabType(name: name ?? '', apiUrl: url ?? '');
+  }
 }
