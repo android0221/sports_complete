@@ -40,7 +40,7 @@ class SportsCompleteApp extends StatelessWidget {
 
         theme: ThemeData(appBarTheme: _appBarTheme),
         darkTheme: ThemeData.dark().copyWith(appBarTheme: _appBarTheme),
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.system,
         home: const HomePage(),
       ),
     );

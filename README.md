@@ -1,30 +1,35 @@
-# sports_complete
+# Sports Complete
 
-A new Flutter project.
+项目为体育相关的直播和数据App，数据来源是 www.zhibo8.cc 。
 
-## Getting Started
+**项目持续维护中，欢迎Star、Fork，提Issue。**
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+## 预览
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|
 
-## Assets
+**划重点，中国男足排名75。**
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+## 开发环境
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
+1. Flutter 2.5.3 • channel stable
+2. Dart 2.14.4
 
-## Localization
+## 已实现功能
 
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
+* FIFA，男女足世界排名。
 
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+## 下一步计划
+
+* [ ] NBA文字直播和数据统计。
+
+## 第三方库
+
+|库|描述|
+|---|---|
+|[dio](https://pub.dev/packages/dio)|网络请求|
+|[equatable](https://pub.dev/packages/equatable)|对象比较|
+|[flutter_bloc](https://pub.dev/packages/flutter_bloc)|状态管理|
+|[fluttertoast](https://pub.dev/packages/fluttertoast)|Toast|
+
+
