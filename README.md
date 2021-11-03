@@ -7,6 +7,7 @@
 ## 预览
 
 |![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|
+|---|---|
 
 **划重点，中国男足排名75。**
 
