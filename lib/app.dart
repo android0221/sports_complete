@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,7 +31,10 @@ class SportsCompleteApp extends StatelessWidget {
           Locale('en', ''),
           Locale('zh', 'CN'),
         ],
-
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
+          child: child!,
+        ),
         onGenerateTitle: (BuildContext context) =>
             AppLocalizations.of(context)!.appTitle,
 
@@ -44,6 +48,9 @@ class SportsCompleteApp extends StatelessWidget {
 
   AppBarTheme get _appBarTheme => const AppBarTheme(
         elevation: 0,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+        ),
         titleTextStyle: TextStyle(fontSize: 20),
       );
 }

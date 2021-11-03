@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sports_complete/features/fifa/entities/entities.dart';
+import 'package:sports_complete/features/fifa/pages/fifa_page.dart';
 import 'package:sports_complete/features/home/entities/entities.dart';
 
 class LeaguePage extends StatelessWidget {
@@ -21,7 +23,19 @@ class LeaguePage extends StatelessWidget {
             tabs: league.tabTypes.map((e) => Tab(text: e.name)).toList(),
           ),
         ),
+        body: TabBarView(children: pages),
       ),
     );
+  }
+
+  List<Widget> get pages {
+    switch (league.name) {
+      case 'FIFA':
+        return const [
+          FifaPage(gender: Gender.male),
+          FifaPage(gender: Gender.female),
+        ];
+    }
+    return league.tabTypes.map((e) => Text(e.name)).toList();
   }
 }
