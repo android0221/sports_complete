@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sports_complete/features/home/entities/entities.dart';
 import 'package:sports_complete/features/league/pages/league_page.dart';
@@ -47,7 +48,11 @@ class _Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width * 0.2;
     if (url != null && url!.isNotEmpty) {
-      return Image.network(url!, width: size, fit: BoxFit.contain);
+      return CachedNetworkImage(
+        imageUrl: url!,
+        width: size,
+        fit: BoxFit.contain,
+      );
     }
     return FlutterLogo(size: size);
   }

@@ -36,5 +36,4 @@
 |[fluttertoast](https://pub.dev/packages/fluttertoast)|Toast|
 |[scrollable_positioned_list](https://pub.dev/packages/scrollable_positioned_list)|列表滚动到指定widget|
 |[sticky_headers](https://pub.dev/packages/sticky_headers)|粘性头部|
-
-
+|[cached_network_image](https://pub.dev/packages/cached_network_image)|网络图片缓存|

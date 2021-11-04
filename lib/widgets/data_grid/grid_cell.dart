@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class GridTextCell extends StatelessWidget {
@@ -42,7 +43,7 @@ class GridLogoCell extends StatelessWidget {
 
   Widget _image() => logoUrl.isEmpty
       ? const SizedBox.shrink()
-      : Image.network(logoUrl, width: 32, height: 32);
+      : CachedNetworkImage(imageUrl: logoUrl, width: 32, height: 32);
 }
 
 class _Text extends StatelessWidget {
