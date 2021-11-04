@@ -10,17 +10,24 @@ import 'package:sports_complete/utils/utils.dart';
 import 'package:sports_complete/widgets/widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 
-class SchedulePage extends StatelessWidget {
+class SchedulePage extends StatefulWidget {
   final String apiUrl;
 
   const SchedulePage({Key? key, required this.apiUrl}) : super(key: key);
 
   @override
+  State<SchedulePage> createState() => _SchedulePageState();
+}
+
+class _SchedulePageState extends State<SchedulePage>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocProvider(
       create: (context) => ScheduleCubit(
         repository: ScheduleRepository(serverApi: context.read<ServerApi>()),
-        apiUrl: apiUrl,
+        apiUrl: widget.apiUrl,
       )..fetch(),
       child: BlocConsumer<ScheduleCubit, ScheduleState>(
         listener: (context, state) {
@@ -45,6 +52,9 @@ class SchedulePage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 class _View extends StatelessWidget {
