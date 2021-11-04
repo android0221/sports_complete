@@ -18,7 +18,10 @@ class HomePage extends StatelessWidget {
         repository: LeaguesRepository(serverApi: context.read<ServerApi>()),
       )..fetch(),
       child: Scaffold(
-        appBar: AppBar(title: Text(AppLocalizations.of(context)!.appTitle)),
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.appTitle),
+          actions: const [SettingIcon()],
+        ),
         body: BlocConsumer<LeaguesCubit, LeaguesState>(
           listener: (context, state) {
             if (state is LeaguesLoadFailure) {

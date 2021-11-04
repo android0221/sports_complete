@@ -1,6 +1,9 @@
 {
-  "appTitle": "sports_complete",
+  "appTitle": "Sports Complete",
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+
+  "settingsPageTitle": "Settings",
+  "themeModePageTitle": "Dark Mode"
 }

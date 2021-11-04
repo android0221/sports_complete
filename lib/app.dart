@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sports_complete/features/home/pages/home_page.dart';
+import 'package:sports_complete/features/settings/blocs/theme_mode/theme_mode_cubit.dart';
 import 'package:sports_complete/services/server_api.dart';
 
 /// The Widget that configures your application.
@@ -14,34 +15,41 @@ class SportsCompleteApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider(
       create: (context) => ServerApi(),
-      child: MaterialApp(
-        // Providing a restorationScopeId allows the Navigator built by the
-        // MaterialApp to restore the navigation stack when a user leaves and
-        // returns to the app after it has been killed while running in the
-        // background.
-        restorationScopeId: 'app',
-
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('en', ''),
-          Locale('zh', 'CN'),
-        ],
-        builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
-          child: child!,
+      child: BlocProvider(
+        create: (context) => ThemeModeCubit(),
+        child: BlocBuilder<ThemeModeCubit, ThemeMode>(
+          builder: (context, state) {
+            return MaterialApp(
+              restorationScopeId: 'app',
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: const [
+                Locale('en', ''),
+                Locale('zh', 'CN'),
+              ],
+              builder: (context, child) => MediaQuery(
+                data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
+                child: child!,
+              ),
+              onGenerateTitle: (BuildContext context) =>
+                  AppLocalizations.of(context)!.appTitle,
+              theme: ThemeData(
+                appBarTheme: _appBarTheme,
+                dividerTheme: _dividerTheme,
+              ),
+              darkTheme: ThemeData.dark().copyWith(
+                appBarTheme: _appBarTheme,
+                dividerTheme: _dividerTheme,
+              ),
+              themeMode: state,
+              home: const HomePage(),
+            );
+          },
         ),
-        onGenerateTitle: (BuildContext context) =>
-            AppLocalizations.of(context)!.appTitle,
-
-        theme: ThemeData(appBarTheme: _appBarTheme),
-        darkTheme: ThemeData.dark().copyWith(appBarTheme: _appBarTheme),
-        themeMode: ThemeMode.system,
-        home: const HomePage(),
       ),
     );
   }
@@ -53,4 +61,6 @@ class SportsCompleteApp extends StatelessWidget {
         ),
         titleTextStyle: TextStyle(fontSize: 20),
       );
+
+  DividerThemeData get _dividerTheme => const DividerThemeData(space: 0);
 }
