@@ -7,7 +7,6 @@ import 'package:sports_complete/features/home/pages/home_page.dart';
 import 'package:sports_complete/features/settings/blocs/theme_mode/theme_mode_cubit.dart';
 import 'package:sports_complete/services/server_api.dart';
 
-/// The Widget that configures your application.
 class SportsCompleteApp extends StatelessWidget {
   const SportsCompleteApp({Key? key}) : super(key: key);
 

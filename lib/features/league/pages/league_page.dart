@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sports_complete/features/fifa/entities/entities.dart';
 import 'package:sports_complete/features/fifa/pages/fifa_page.dart';
 import 'package:sports_complete/features/home/entities/entities.dart';
+import 'package:sports_complete/features/schedule/pages/schedule_page.dart';
 
 class LeaguePage extends StatelessWidget {
   final League league;
@@ -30,6 +31,10 @@ class LeaguePage extends StatelessWidget {
 
   List<Widget> get pages {
     switch (league.name) {
+      case 'NBA':
+        return league.tabTypes.map((e) {
+          return e.name == '赛程' ? const SchedulePage() : Text(e.name);
+        }).toList();
       case 'FIFA':
         return const [
           FifaPage(gender: Gender.male),

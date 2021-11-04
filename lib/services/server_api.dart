@@ -29,6 +29,20 @@ class ServerApi extends BaseApi {
     return WorldRankingDto(result);
   }
 
+  Future<SchedulesDto> fetchSchedules({required String leagueName}) async {
+    final parameters = {
+      '_url': '/data/index',
+      'league': leagueName,
+      'tab': '赛程',
+      'year': '[year]',
+    };
+    final result = await get(
+      'https://dc.qiumibao.com/shuju/public/index.php',
+      parameters: parameters,
+    );
+    return SchedulesDto(result);
+  }
+
   @override
   onRequestSuccess(data) {
     return data;

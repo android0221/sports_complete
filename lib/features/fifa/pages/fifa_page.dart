@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sports_complete/features/fifa/blocs/world_ranking/world_ranking_cubit.dart';
 import 'package:sports_complete/features/fifa/entities/entities.dart';
 import 'package:sports_complete/features/fifa/repositories/fifa_repository.dart';
-import 'package:sports_complete/features/fifa/widgets/widgets.dart';
 import 'package:sports_complete/services/server_api.dart';
 import 'package:sports_complete/utils/utils.dart';
 import 'package:sports_complete/widgets/widgets.dart';
@@ -29,7 +28,15 @@ class _FifaPageState extends State<FifaPage>
       )..fetch(),
       child: Column(
         children: [
-          const RankingTitle(),
+          const GridHeader(
+            titles: [
+              '世界排名',
+              '国家/地区',
+              '排名变化',
+              '积分情况',
+              '积分变化',
+            ],
+          ),
           Expanded(
             child: BlocConsumer<WorldRankingCubit, WorldRankingState>(
               listener: (context, state) {
@@ -39,15 +46,7 @@ class _FifaPageState extends State<FifaPage>
               },
               builder: (context, state) {
                 if (state is WorldRankingLoadSucess) {
-                  return ListView.builder(
-                    itemCount: state.rankings.length,
-                    itemBuilder: (_, index) => RankingRow(
-                      state.rankings[index],
-                      backgroundColor: index.isEven
-                          ? Colors.transparent
-                          : Theme.of(context).dividerColor,
-                    ),
-                  );
+                  return _View(state.rankings);
                 }
                 if (state is WorldRankingLoadInProgress) {
                   return const Loading();
@@ -68,4 +67,31 @@ class _FifaPageState extends State<FifaPage>
 
   @override
   bool get wantKeepAlive => true;
+}
+
+class _View extends StatelessWidget {
+  final List<WorldRanking> rankings;
+
+  const _View(this.rankings, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: rankings.length,
+      itemBuilder: (_, index) => GridRow(
+        index: index,
+        children: [
+          GridTextCell(rankings[index].ranking),
+          GridLogoCell(
+            text: rankings[index].countryName,
+            logoUrl: rankings[index].logoUrl,
+            logoFirst: true,
+          ),
+          GridTextCell(rankings[index].rankingChange),
+          GridTextCell(rankings[index].points),
+          GridTextCell(rankings[index].pointsChange),
+        ],
+      ),
+    );
+  }
 }

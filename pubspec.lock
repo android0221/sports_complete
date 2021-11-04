@@ -175,6 +175,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "6.0.1"
+  scrollable_positioned_list:
+    dependency: "direct main"
+    description:
+      name: scrollable_positioned_list
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -194,6 +201,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.10.0"
+  sticky_headers:
+    dependency: "direct main"
+    description:
+      name: sticky_headers
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.0"
   stream_channel:
     dependency: transitive
     description:
