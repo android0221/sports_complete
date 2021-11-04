@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:sports_complete/entities/entities.dart';
 
 class Schedules extends Equatable {
   final int position;
@@ -30,37 +31,19 @@ class Schedule extends Equatable {
 
 class Game extends Equatable {
   final String time;
-  final String guestId;
-  final String guestName;
-  final String guestLogoUrl;
-  final String homeId;
-  final String homeName;
-  final String homeLogoUrl;
+  final Team guest;
+  final Team home;
   final String score;
   final String? type;
 
   const Game({
     required this.time,
-    required this.guestId,
-    required this.guestName,
-    required this.guestLogoUrl,
-    required this.homeId,
-    required this.homeName,
-    required this.homeLogoUrl,
+    required this.guest,
+    required this.home,
     required this.score,
     required this.type,
   });
 
   @override
-  List<Object?> get props => [
-        time,
-        guestId,
-        guestName,
-        guestLogoUrl,
-        homeId,
-        homeName,
-        homeLogoUrl,
-        score,
-        type,
-      ];
+  List<Object?> get props => [time, guest, home, score, type];
 }

@@ -1,3 +1,4 @@
+import 'package:sports_complete/entities/entities.dart';
 import 'package:sports_complete/features/schedule/entities/schedule.dart';
 
 class SchedulesDto {
@@ -39,12 +40,16 @@ class SchedulesDto {
   Game _toGame(Map<String, dynamic> game) {
     return Game(
       time: game['时间'] ?? '',
-      guestId: game['guestId'] ?? '',
-      guestName: game['客队'] ?? '',
-      guestLogoUrl: game['客队图标'] ?? '',
-      homeId: game['homeId'] ?? '',
-      homeName: game['主队'] ?? '',
-      homeLogoUrl: game['主队图标'] ?? '',
+      guest: Team(
+        id: game['guestId'] ?? '',
+        name: game['客队'] ?? '',
+        logoUrl: game['客队图标'] ?? '',
+      ),
+      home: Team(
+        id: game['homeId'] ?? '',
+        name: game['主队'] ?? '',
+        logoUrl: game['主队图标'] ?? '',
+      ),
       score: game['比分'] ?? '',
       type: game['赛事'] ?? '',
     );

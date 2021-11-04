@@ -1,3 +1,4 @@
+import 'package:sports_complete/entities/entities.dart';
 import 'package:sports_complete/features/fifa/entities/entities.dart';
 
 class WorldRankingDto {
@@ -10,11 +11,13 @@ class WorldRankingDto {
     if (json['data'] != null && json['data'] is List) {
       for (final item in json['data']) {
         rankings.add(WorldRanking(
+          country: Team(
+            id: item['countryId']?.toString() ?? '',
+            name: item['国家/地区']?.toString() ?? '',
+            logoUrl: item['球队图标']?.toString() ?? '',
+          ),
           ranking: item['世界排名']?.toString() ?? '',
-          countryId: item['countryId']?.toString() ?? '',
-          countryName: item['国家/地区']?.toString() ?? '',
           rankingChange: item['排名变化']?.toString() ?? '',
-          logoUrl: item['球队图标']?.toString() ?? '',
           points: item['积分情况']?.toString() ?? '',
           pointsChange: item['积分变化']?.toString() ?? '',
         ));

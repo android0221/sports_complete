@@ -18,14 +18,14 @@ class GameRow extends StatelessWidget {
       children: [
         GridTextCell(game.time),
         GridLogoCell(
-          text: game.guestName,
-          logoUrl: game.guestLogoUrl,
+          text: game.guest.name,
+          logoUrl: game.guest.logoUrl,
           logoFirst: false,
         ),
         GridTextCell(game.score),
         GridLogoCell(
-          text: game.homeName,
-          logoUrl: game.homeLogoUrl,
+          text: game.home.name,
+          logoUrl: game.guest.logoUrl,
           logoFirst: true,
         ),
         if (game.type != null) GridTextCell(game.type!),

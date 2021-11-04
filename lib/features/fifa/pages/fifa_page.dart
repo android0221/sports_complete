@@ -83,8 +83,8 @@ class _View extends StatelessWidget {
         children: [
           GridTextCell(rankings[index].ranking),
           GridLogoCell(
-            text: rankings[index].countryName,
-            logoUrl: rankings[index].logoUrl,
+            text: rankings[index].country.name,
+            logoUrl: rankings[index].country.logoUrl,
             logoFirst: true,
           ),
           GridTextCell(rankings[index].rankingChange),
