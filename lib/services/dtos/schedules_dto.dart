@@ -7,8 +7,9 @@ class SchedulesDto {
 
   Schedules toEntity() {
     return Schedules(
-      position: json['position'],
+      position: json['position'] ?? 0,
       schedules: _toEntities(),
+      hasGameType: json['items']?.length == 5,
     );
   }
 
@@ -37,15 +38,15 @@ class SchedulesDto {
 
   Game _toGame(Map<String, dynamic> game) {
     return Game(
-      time: game['时间'],
-      guestId: game['guestId'],
-      guestName: game['客队'],
-      guestLogoUrl: game['客队图标'],
-      homeId: game['homeId'],
-      homeName: game['主队'],
-      homeLogoUrl: game['主队图标'],
-      score: game['比分'],
-      type: game['赛事'],
+      time: game['时间'] ?? '',
+      guestId: game['guestId'] ?? '',
+      guestName: game['客队'] ?? '',
+      guestLogoUrl: game['客队图标'] ?? '',
+      homeId: game['homeId'] ?? '',
+      homeName: game['主队'] ?? '',
+      homeLogoUrl: game['主队图标'] ?? '',
+      score: game['比分'] ?? '',
+      type: game['赛事'] ?? '',
     );
   }
 }

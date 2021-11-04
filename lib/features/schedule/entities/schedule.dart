@@ -3,14 +3,16 @@ import 'package:equatable/equatable.dart';
 class Schedules extends Equatable {
   final int position;
   final List<Schedule> schedules;
+  final bool hasGameType;
 
   const Schedules({
     required this.position,
     required this.schedules,
+    required this.hasGameType,
   });
 
   @override
-  List<Object?> get props => [position, schedules];
+  List<Object?> get props => [position, schedules, hasGameType];
 }
 
 class Schedule extends Equatable {
@@ -35,7 +37,7 @@ class Game extends Equatable {
   final String homeName;
   final String homeLogoUrl;
   final String score;
-  final String type;
+  final String? type;
 
   const Game({
     required this.time,

@@ -6,8 +6,8 @@
 
 ## 预览
 
-|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|
-|---|---|
+|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|![](./screenshots/screenshot_3.jpg)|
+|---|---|---|
 
 **划重点，中国男足排名75。**
 
@@ -20,6 +20,7 @@
 
 * FIFA，男女足世界排名。
 * 深色模式切换。
+* 所有联赛和项目的赛程。
 
 ## 下一步计划
 
@@ -33,5 +34,7 @@
 |[equatable](https://pub.dev/packages/equatable)|对象比较|
 |[flutter_bloc](https://pub.dev/packages/flutter_bloc)|状态管理|
 |[fluttertoast](https://pub.dev/packages/fluttertoast)|Toast|
+|[scrollable_positioned_list](https://pub.dev/packages/scrollable_positioned_list)|列表滚动到指定widget|
+|[sticky_headers](https://pub.dev/packages/sticky_headers)|粘性头部|
 
 

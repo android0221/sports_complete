@@ -6,8 +6,8 @@ class ScheduleRepository {
 
   const ScheduleRepository({required this.serverApi});
 
-  Future<Schedules> fetchSchedules() async {
-    final dto = await serverApi.fetchSchedules(leagueName: 'NBA');
+  Future<Schedules> fetchSchedules({required String apiUrl}) async {
+    final dto = await serverApi.fetchSchedules(apiUrl: apiUrl);
     return dto.toEntity();
   }
 }

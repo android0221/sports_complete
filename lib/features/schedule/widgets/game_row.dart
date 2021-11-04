@@ -28,7 +28,7 @@ class GameRow extends StatelessWidget {
           logoUrl: game.homeLogoUrl,
           logoFirst: true,
         ),
-        GridTextCell(game.type),
+        if (game.type != null) GridTextCell(game.type!),
       ],
     );
   }

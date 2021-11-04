@@ -31,16 +31,18 @@ class GridLogoCell extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           logoFirst
-              ? Image.network(logoUrl, width: 32, height: 32)
+              ? _image()
               : Expanded(child: _Text(text, textAlign: TextAlign.end)),
           const SizedBox(width: 6),
-          logoFirst
-              ? Expanded(child: _Text(text))
-              : Image.network(logoUrl, width: 32, height: 32),
+          logoFirst ? Expanded(child: _Text(text)) : _image(),
         ],
       ),
     );
   }
+
+  Widget _image() => logoUrl.isEmpty
+      ? const SizedBox.shrink()
+      : Image.network(logoUrl, width: 32, height: 32);
 }
 
 class _Text extends StatelessWidget {

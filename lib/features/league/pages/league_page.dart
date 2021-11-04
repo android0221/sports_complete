@@ -31,16 +31,14 @@ class LeaguePage extends StatelessWidget {
 
   List<Widget> get pages {
     switch (league.name) {
-      case 'NBA':
-        return league.tabTypes.map((e) {
-          return e.name == '赛程' ? const SchedulePage() : Text(e.name);
-        }).toList();
       case 'FIFA':
         return const [
           FifaPage(gender: Gender.male),
           FifaPage(gender: Gender.female),
         ];
     }
-    return league.tabTypes.map((e) => Text(e.name)).toList();
+    return league.tabTypes.map((e) {
+      return e.name == '赛程' ? SchedulePage(apiUrl: e.apiUrl) : Text(e.name);
+    }).toList();
   }
 }
