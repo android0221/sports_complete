@@ -5,5 +5,7 @@
   },
 
   "settingsPageTitle": "Settings",
-  "themeModePageTitle": "Dark Mode"
+  "themeModePageTitle": "Dark Mode",
+  "dataPageTitle": "Data",
+  "liveGames": "Live Games"
 }

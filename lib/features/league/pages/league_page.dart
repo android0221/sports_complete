@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sports_complete/features/data/entities/entities.dart';
 import 'package:sports_complete/features/fifa/entities/entities.dart';
 import 'package:sports_complete/features/fifa/pages/fifa_page.dart';
-import 'package:sports_complete/features/home/entities/entities.dart';
 import 'package:sports_complete/features/schedule/pages/schedule_page.dart';
 
 class LeaguePage extends StatelessWidget {

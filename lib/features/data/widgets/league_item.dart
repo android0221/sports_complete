@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:sports_complete/features/home/entities/entities.dart';
+import 'package:sports_complete/features/data/entities/entities.dart';
 import 'package:sports_complete/features/league/pages/league_page.dart';
 
 class LeagueItem extends StatelessWidget {

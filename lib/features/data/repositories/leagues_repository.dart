@@ -1,4 +1,4 @@
-import 'package:sports_complete/features/home/entities/league.dart';
+import 'package:sports_complete/features/data/entities/entities.dart';
 import 'package:sports_complete/services/server_api.dart';
 
 class LeaguesRepository {

@@ -1,4 +1,4 @@
-import 'package:sports_complete/features/home/entities/entities.dart';
+import 'package:sports_complete/features/data/entities/entities.dart';
 
 class LeaguesDto {
   List<LeagueDto>? league;
