@@ -6,8 +6,8 @@
 
 ## 预览
 
-|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|![](./screenshots/screenshot_3.jpg)|
-|---|---|---|
+|![](./screenshots/screenshot_5.jpg)|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|![](./screenshots/screenshot_3.jpg)|
+|---|---|---|---|
 |![](./screenshots/screenshot_4.jpg)|
 
 **划重点，中国男足排名75。**
@@ -19,6 +19,7 @@
 
 ## 已实现功能
 
+* 最近比赛直播。
 * FIFA，男女足世界排名。
 * 深色模式切换。
 * 所有联赛和项目的赛程。
