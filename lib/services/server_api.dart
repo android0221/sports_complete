@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../entities/api_exception.dart';
 import '../features/fifa/entities/entities.dart';
 import 'base_api.dart';
@@ -32,6 +34,21 @@ class ServerApi extends BaseApi {
   Future<SchedulesDto> fetchSchedules({required String apiUrl}) async {
     final result = await get(apiUrl);
     return SchedulesDto(result);
+  }
+
+  Future<List<LiveGamesDto>> fetchLiveGames() async {
+    final games = <LiveGamesDto>[];
+    final result = await get(
+      'https://m.zhibo8.cc/json/zhibo/saishi_v2.htm',
+      parameters: {'random': Random().nextDouble()},
+    );
+    if (result != null && result is List) {
+      for (final item in result) {
+        games.add(LiveGamesDto.fromJson(item));
+      }
+    }
+
+    return games;
   }
 
   @override
