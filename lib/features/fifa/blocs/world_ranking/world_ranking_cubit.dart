@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:sports_complete/entities/api_exception.dart';
-import 'package:sports_complete/features/fifa/entities/entities.dart';
-import 'package:sports_complete/features/fifa/repositories/fifa_repository.dart';
+
+import '../../../../entities/api_exception.dart';
+import '../../entities/entities.dart';
+import '../../repositories/fifa_repository.dart';
 
 part 'world_ranking_state.dart';
 

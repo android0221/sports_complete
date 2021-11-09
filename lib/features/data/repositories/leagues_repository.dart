@@ -1,5 +1,5 @@
-import 'package:sports_complete/features/data/entities/entities.dart';
-import 'package:sports_complete/services/server_api.dart';
+import '../../../services/server_api.dart';
+import '../entities/entities.dart';
 
 class LeaguesRepository {
   final ServerApi serverApi;

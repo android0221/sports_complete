@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:sports_complete/entities/api_exception.dart';
-import 'package:sports_complete/features/schedule/entities/schedule.dart';
-import 'package:sports_complete/features/schedule/repositories/schedule_repository.dart';
+
+import '../../../../entities/api_exception.dart';
+import '../../entities/schedule.dart';
+import '../../repositories/schedule_repository.dart';
 
 part 'schedule_state.dart';
 

@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:sports_complete/features/home/pages/home_page.dart';
-import 'package:sports_complete/features/settings/blocs/theme_mode/theme_mode_cubit.dart';
-import 'package:sports_complete/services/server_api.dart';
+
+import 'features/home/pages/home_page.dart';
+import 'features/settings/blocs/theme_mode/theme_mode_cubit.dart';
+import 'services/server_api.dart';
 
 class SportsCompleteApp extends StatelessWidget {
   const SportsCompleteApp({Key? key}) : super(key: key);

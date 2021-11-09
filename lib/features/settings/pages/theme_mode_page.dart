@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:sports_complete/features/settings/blocs/theme_mode/theme_mode_cubit.dart';
+
+import '../blocs/theme_mode/theme_mode_cubit.dart';
 
 class ThemeModePage extends StatelessWidget {
   const ThemeModePage({Key? key}) : super(key: key);

@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:sports_complete/features/data/entities/entities.dart';
-import 'package:sports_complete/features/league/pages/league_page.dart';
+
+import '../../league/pages/league_page.dart';
+import '../entities/entities.dart';
 
 class LeagueItem extends StatelessWidget {
   final League league;

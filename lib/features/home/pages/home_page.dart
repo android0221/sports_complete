@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sports_complete/features/data/pages/data_page.dart';
-import 'package:sports_complete/features/live_games/pages/live_games_page.dart';
-import 'package:sports_complete/features/settings/pages/setttings_page.dart';
+
+import '../../data/pages/data_page.dart';
+import '../../live_games/pages/live_games_page.dart';
+import '../../settings/pages/setttings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

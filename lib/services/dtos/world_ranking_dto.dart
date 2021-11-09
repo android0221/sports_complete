@@ -1,5 +1,5 @@
-import 'package:sports_complete/entities/entities.dart';
-import 'package:sports_complete/features/fifa/entities/entities.dart';
+import '../../entities/entities.dart';
+import '../../features/fifa/entities/entities.dart';
 
 class WorldRankingDto {
   final Map<String, dynamic> json;

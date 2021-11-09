@@ -1,5 +1,5 @@
-import 'package:sports_complete/features/schedule/entities/schedule.dart';
-import 'package:sports_complete/services/server_api.dart';
+import '../../../services/server_api.dart';
+import '../entities/schedule.dart';
 
 class ScheduleRepository {
   final ServerApi serverApi;

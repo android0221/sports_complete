@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sports_complete/widgets/data_grid/data_grid.dart';
+
+import 'data_grid.dart';
 
 class GridHeader extends StatelessWidget {
   final List<String> titles;

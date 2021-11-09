@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:sports_complete/entities/team.dart';
+
+import '../../../entities/team.dart';
 
 class WorldRanking extends Equatable {
   final Team country;

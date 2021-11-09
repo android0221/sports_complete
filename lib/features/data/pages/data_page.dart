@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:sports_complete/features/data/blocs/leagues/leagues_cubit.dart';
-import 'package:sports_complete/features/data/repositories/leagues_repository.dart';
-import 'package:sports_complete/features/data/widgets/widgets.dart';
-import 'package:sports_complete/services/server_api.dart';
-import 'package:sports_complete/utils/utils.dart';
-import 'package:sports_complete/widgets/widgets.dart';
+
+import '../../../services/server_api.dart';
+import '../../../utils/utils.dart';
+import '../../../widgets/widgets.dart';
+import '../blocs/leagues/leagues_cubit.dart';
+import '../repositories/leagues_repository.dart';
+import '../widgets/widgets.dart';
 
 class DataPage extends StatefulWidget {
   const DataPage({Key? key}) : super(key: key);

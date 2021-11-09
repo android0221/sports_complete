@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:sports_complete/features/settings/blocs/theme_mode/theme_mode_cubit.dart';
-import 'package:sports_complete/features/settings/pages/theme_mode_page.dart';
+
+import '../blocs/theme_mode/theme_mode_cubit.dart';
+import 'theme_mode_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:sports_complete/entities/entities.dart';
+
+import '../../../entities/entities.dart';
 
 class Schedules extends Equatable {
   final int position;

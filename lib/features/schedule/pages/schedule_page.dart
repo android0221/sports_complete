@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:sports_complete/features/schedule/blocs/schedule/schedule_cubit.dart';
-import 'package:sports_complete/features/schedule/entities/entities.dart';
-import 'package:sports_complete/features/schedule/repositories/schedule_repository.dart';
-import 'package:sports_complete/features/schedule/widgets/widgets.dart';
-import 'package:sports_complete/services/server_api.dart';
-import 'package:sports_complete/utils/utils.dart';
-import 'package:sports_complete/widgets/widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
+
+import '../../../services/server_api.dart';
+import '../../../utils/utils.dart';
+import '../../../widgets/widgets.dart';
+import '../blocs/schedule/schedule_cubit.dart';
+import '../entities/entities.dart';
+import '../repositories/schedule_repository.dart';
+import '../widgets/widgets.dart';
 
 class SchedulePage extends StatefulWidget {
   final String apiUrl;

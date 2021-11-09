@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sports_complete/features/schedule/entities/schedule.dart';
-import 'package:sports_complete/widgets/data_grid/data_grid.dart';
+
+import '../../../widgets/data_grid/data_grid.dart';
+import '../entities/schedule.dart';
 
 class GameRow extends StatelessWidget {
   final int index;

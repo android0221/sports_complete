@@ -1,5 +1,5 @@
-import 'package:sports_complete/entities/entities.dart';
-import 'package:sports_complete/features/schedule/entities/schedule.dart';
+import '../../entities/entities.dart';
+import '../../features/schedule/entities/schedule.dart';
 
 class SchedulesDto {
   final Map<String, dynamic> json;

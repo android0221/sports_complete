@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sports_complete/features/fifa/blocs/world_ranking/world_ranking_cubit.dart';
-import 'package:sports_complete/features/fifa/entities/entities.dart';
-import 'package:sports_complete/features/fifa/repositories/fifa_repository.dart';
-import 'package:sports_complete/services/server_api.dart';
-import 'package:sports_complete/utils/utils.dart';
-import 'package:sports_complete/widgets/widgets.dart';
+
+import '../../../services/server_api.dart';
+import '../../../utils/utils.dart';
+import '../../../widgets/widgets.dart';
+import '../blocs/world_ranking/world_ranking_cubit.dart';
+import '../entities/entities.dart';
+import '../repositories/fifa_repository.dart';
 
 class FifaPage extends StatefulWidget {
   final Gender gender;

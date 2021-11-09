@@ -1,5 +1,5 @@
-import 'package:sports_complete/features/fifa/entities/entities.dart';
-import 'package:sports_complete/services/server_api.dart';
+import '../../../services/server_api.dart';
+import '../entities/entities.dart';
 
 class FifaRepository {
   final ServerApi serverApi;
