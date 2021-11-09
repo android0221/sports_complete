@@ -22,6 +22,7 @@ class _LiveGamesPageState extends State<LiveGamesPage>
   Widget build(BuildContext context) {
     super.build(context);
     return DefaultTabController(
+      initialIndex: 1,
       length: 5,
       child: BlocProvider(
         create: (context) => LiveGamesCubit(
