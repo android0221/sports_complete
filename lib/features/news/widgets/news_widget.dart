@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:sports_complete/features/news/pages/news_detail_page.dart';
 
 import '../entities/entities.dart';
+import '../pages/news_detail_page.dart';
 
 class NewsWidget extends StatelessWidget {
   final News news;
