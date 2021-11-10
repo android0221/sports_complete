@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sports_complete/features/news/entities/news.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import '../entities/news.dart';
 
 class NewsDetailPage extends StatelessWidget {
   final News news;

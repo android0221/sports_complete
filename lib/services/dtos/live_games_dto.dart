@@ -138,12 +138,14 @@ class _LiveGameDto {
 
   Game _toEntity() {
     return Game(
+      id: id ?? '',
       time: stime ?? '',
       guest: _toTeam('visit'),
       home: _toTeam('home'),
       isImportant: content?.contains('<b>') ?? false,
       type: _type,
       title: title?.replaceAll(RegExp(r'<.>'), '').split(' ').first ?? '',
+      status: GameStatus.unknown,
     );
   }
 

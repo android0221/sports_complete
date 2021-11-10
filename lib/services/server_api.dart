@@ -51,6 +51,11 @@ class ServerApi extends BaseApi {
     return games;
   }
 
+  Future<LiveGamesScoreDto> fetchLiveGamesScore() async {
+    final result = await get('https://bifen4m.qiumibao.com/json/list.htm');
+    return LiveGamesScoreDto.fromJson(result);
+  }
+
   Future<List<NewsDto>> fetchNews({required DateTime date}) async {
     final month = date.month.toString().padLeft(2, '0');
     final day = date.day.toString().padLeft(2, '0');

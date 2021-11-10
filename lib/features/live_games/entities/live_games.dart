@@ -22,32 +22,75 @@ class LiveGames extends Equatable {
 
   @override
   List<Object?> get props => [date, games];
+
+  LiveGames copyWith({
+    String? date,
+    List<Game>? games,
+  }) {
+    return LiveGames(
+      date: date ?? this.date,
+      games: games ?? this.games,
+    );
+  }
 }
 
 class Game extends Equatable {
+  final String id;
   final String time;
   final Team guest;
   final Team home;
   final bool isImportant;
   final GameType type;
   final String title;
+  final GameStatus status;
+  final GameScore? score;
 
   const Game({
+    required this.id,
     required this.time,
     required this.guest,
     required this.home,
     required this.isImportant,
     required this.type,
     required this.title,
+    required this.status,
+    this.score,
   });
 
   @override
   List<Object?> get props => [
+        id,
         time,
         guest,
         home,
         isImportant,
         type,
         title,
+        status,
+        score,
       ];
+
+  Game copyWith({
+    String? id,
+    String? time,
+    Team? guest,
+    Team? home,
+    bool? isImportant,
+    GameType? type,
+    String? title,
+    GameStatus? status,
+    GameScore? score,
+  }) {
+    return Game(
+      id: id ?? this.id,
+      time: time ?? this.time,
+      guest: guest ?? this.guest,
+      home: home ?? this.home,
+      isImportant: isImportant ?? this.isImportant,
+      type: type ?? this.type,
+      title: title ?? this.title,
+      status: status ?? this.status,
+      score: score ?? this.score,
+    );
+  }
 }
