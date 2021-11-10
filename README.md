@@ -6,9 +6,9 @@
 
 ## 预览
 
-|![](./screenshots/screenshot_5.jpg)|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_2.jpg)|![](./screenshots/screenshot_3.jpg)|
+|![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_5.jpg)|![](./screenshots/screenshot_6.jpg)|![](./screenshots/screenshot_4.jpg)|
 |---|---|---|---|
-|![](./screenshots/screenshot_4.jpg)|
+|![](./screenshots/screenshot_3.jpg)|![](./screenshots/screenshot_2.jpg)|
 
 **划重点，中国男足排名75。**
 
@@ -39,3 +39,6 @@
 |[scrollable_positioned_list](https://pub.dev/packages/scrollable_positioned_list)|列表滚动到指定widget|
 |[sticky_headers](https://pub.dev/packages/sticky_headers)|粘性头部|
 |[cached_network_image](https://pub.dev/packages/cached_network_image)|网络图片缓存|
+|[carousel_slider](https://pub.dev/packages/carousel_slider)|轮播图|
+|[webview_flutter](https://pub.dev/packages/webview_flutter)|WebView|
+|[intl](https://pub.dev/packages/intl)|日期格式化|

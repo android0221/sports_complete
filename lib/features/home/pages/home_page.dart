@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/pages/data_page.dart';
 import '../../live_games/pages/live_games_page.dart';
+import '../../news/pages/news_page.dart';
 import '../../settings/pages/setttings_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,6 +34,11 @@ class _HomePageState extends State<HomePage> {
             label: '直播',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.feed_outlined),
+            activeIcon: Icon(Icons.feed),
+            label: '新闻',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.data_usage_outlined),
             activeIcon: Icon(Icons.data_usage),
             label: '数据',
@@ -49,6 +55,7 @@ class _HomePageState extends State<HomePage> {
         physics: const NeverScrollableScrollPhysics(),
         children: const [
           LiveGamesPage(),
+          NewsPage(),
           DataPage(),
           SettingsPage(),
         ],

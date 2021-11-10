@@ -11,6 +11,7 @@ environment:
 
 dependencies:
   cached_network_image: ^3.1.0+1
+  carousel_slider: ^4.0.0
   dio: ^4.0.1
   equatable: ^2.0.3
   flutter:
@@ -19,8 +20,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   fluttertoast: ^8.0.8
+  intl: ^0.17.0
   scrollable_positioned_list: ^0.2.2
   sticky_headers: ^0.2.0
+  webview_flutter: ^2.3.0
 
 dev_dependencies:
   flutter_lints: ^1.0.4

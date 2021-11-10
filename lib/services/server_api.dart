@@ -51,6 +51,21 @@ class ServerApi extends BaseApi {
     return games;
   }
 
+  Future<List<NewsDto>> fetchNews({required DateTime date}) async {
+    final month = date.month.toString().padLeft(2, '0');
+    final day = date.day.toString().padLeft(2, '0');
+    final news = <NewsDto>[];
+    final result = await get(
+      'https://m.zhibo8.cc/json/news/gather/${date.year}/$month/${day}_news_v3.htm',
+    );
+    if (result != null && result is List) {
+      for (final item in result) {
+        news.add(NewsDto.fromJson(item));
+      }
+    }
+    return news;
+  }
+
   @override
   onRequestSuccess(data) {
     return data;

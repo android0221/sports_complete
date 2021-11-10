@@ -40,10 +40,12 @@ class SportsCompleteApp extends StatelessWidget {
               theme: ThemeData(
                 appBarTheme: _appBarTheme,
                 dividerTheme: _dividerTheme,
+                cardTheme: _cardTheme,
               ),
               darkTheme: ThemeData.dark().copyWith(
                 appBarTheme: _appBarTheme,
                 dividerTheme: _dividerTheme,
+                cardTheme: _cardTheme,
               ),
               themeMode: state,
               home: const HomePage(),
@@ -63,4 +65,10 @@ class SportsCompleteApp extends StatelessWidget {
       );
 
   DividerThemeData get _dividerTheme => const DividerThemeData(space: 0);
+
+  CardTheme get _cardTheme => CardTheme(
+        elevation: 0.5,
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      );
 }

@@ -3,9 +3,9 @@
   "@appTitle": {
     "description": "The title of the application"
   },
-
   "settingsPageTitle": "Settings",
   "themeModePageTitle": "Dark Mode",
   "dataPageTitle": "Data",
-  "liveGames": "Live Games"
+  "liveGames": "Live Games",
+  "news": "News"
 }

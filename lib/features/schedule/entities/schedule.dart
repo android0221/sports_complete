@@ -35,7 +35,7 @@ class Game extends Equatable {
   final Team guest;
   final Team home;
   final String score;
-  final String? type;
+  final String type;
 
   const Game({
     required this.time,
