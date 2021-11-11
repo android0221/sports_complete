@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sports_complete/features/news/pages/news_detail_page.dart';
 
 import '../entities/entities.dart';
 
@@ -63,12 +64,18 @@ class _Slider extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                CachedNetworkImage(imageUrl: e.imageUrl, fit: BoxFit.cover),
-                _Title(e.title),
-              ],
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => NewsDetailPage(e)),
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  CachedNetworkImage(imageUrl: e.imageUrl, fit: BoxFit.cover),
+                  _Title(e.title),
+                ],
+              ),
             ),
           ),
         );
