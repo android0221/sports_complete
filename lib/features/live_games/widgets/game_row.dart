@@ -24,12 +24,13 @@ class GameRow extends StatelessWidget {
             flex: 2,
             child: Column(
               children: [
-                Text(game.score?.score ?? ''),
                 Text(
                   game.title,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.caption,
                 ),
+                const SizedBox(height: 4),
+                Text(game.score?.score ?? ''),
               ],
             ),
           ),
@@ -52,12 +53,14 @@ class _TeamInfo extends StatelessWidget {
       child: Column(
         children: [
           SizedBox.square(
-            dimension: MediaQuery.of(context).size.width / 10,
+            dimension: 32,
             child: CachedNetworkImage(imageUrl: team.logoUrl),
           ),
           Text(
             team.name,
             textAlign: TextAlign.center,
+            style:
+                Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 13),
           ),
         ],
       ),
@@ -78,6 +81,15 @@ class _GameStatus extends StatelessWidget {
       text = game.score?.desc ?? '';
     }
 
-    return Expanded(child: Text(text, textAlign: TextAlign.center));
+    return Expanded(
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              fontSize: 13,
+              color: game.status == GameStatus.inTheRace ? Colors.red : null,
+            ),
+      ),
+    );
   }
 }
