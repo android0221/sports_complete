@@ -71,6 +71,11 @@ class ServerApi extends BaseApi {
     return news;
   }
 
+  Future<RankingsDto> fetchRanking({required String apiUrl}) async {
+    final result = await get(apiUrl);
+    return RankingsDto.fromJson(result);
+  }
+
   @override
   onRequestSuccess(data) {
     return data;

@@ -83,7 +83,7 @@ class _View extends StatelessWidget {
             itemBuilder: (_, index) {
               final schedule = schedules.schedules[index];
               return StickyHeader(
-                header: DateTitle(schedule.date),
+                header: GridSticky(schedule.date),
                 content: ListView.builder(
                   primary: false,
                   shrinkWrap: true,

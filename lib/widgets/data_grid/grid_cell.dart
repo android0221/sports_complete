@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 
 class GridTextCell extends StatelessWidget {
   final String text;
+  final int flex;
 
-  const GridTextCell(this.text, {Key? key}) : super(key: key);
+  const GridTextCell(this.text, {Key? key, this.flex = 1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Center(child: _Text(text)));
+    return Expanded(flex: flex, child: Center(child: _Text(text)));
   }
 }
 
@@ -16,17 +17,20 @@ class GridLogoCell extends StatelessWidget {
   final String text;
   final String logoUrl;
   final bool logoFirst;
+  final int flex;
 
   const GridLogoCell({
     Key? key,
     required this.text,
     required this.logoUrl,
     required this.logoFirst,
+    this.flex = 1,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
+      flex: flex,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,

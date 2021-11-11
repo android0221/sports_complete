@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 
+import '../../../widgets/data_grid/data_grid.dart';
 import '../entities/entities.dart';
 import '../widgets/widgets.dart';
 
@@ -23,7 +24,7 @@ class LiveGamesView extends StatelessWidget {
       itemBuilder: (_, index) {
         final games = dateGames[index];
         return StickyHeader(
-          header: DateTitle(games.date),
+          header: GridSticky(games.date),
           content: ListView.separated(
             primary: false,
             shrinkWrap: true,

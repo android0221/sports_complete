@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../data/entities/entities.dart';
 import '../../fifa/entities/entities.dart';
 import '../../fifa/pages/fifa_page.dart';
+import '../../ranking/pages/ranking_page.dart';
 import '../../schedule/pages/schedule_page.dart';
 
 class LeaguePage extends StatelessWidget {
@@ -31,15 +32,21 @@ class LeaguePage extends StatelessWidget {
   }
 
   List<Widget> get pages {
-    switch (league.name) {
-      case 'FIFA':
-        return const [
-          FifaPage(gender: Gender.male),
-          FifaPage(gender: Gender.female),
-        ];
+    if (league.name == 'FIFA') {
+      return const [
+        FifaPage(gender: Gender.male),
+        FifaPage(gender: Gender.female),
+      ];
     }
     return league.tabTypes.map((e) {
-      return e.name == '赛程' ? SchedulePage(apiUrl: e.apiUrl) : Text(e.name);
+      switch (e.name) {
+        case '赛程':
+          return SchedulePage(apiUrl: e.apiUrl);
+        case '排名':
+          return RankingPage(apiUrl: e.apiUrl);
+        default:
+          return Text(e.name);
+      }
     }).toList();
   }
 }

@@ -8,7 +8,7 @@
 
 |![](./screenshots/screenshot_1.jpg)|![](./screenshots/screenshot_5.jpg)|![](./screenshots/screenshot_6.jpg)|![](./screenshots/screenshot_4.jpg)|
 |---|---|---|---|
-|![](./screenshots/screenshot_3.jpg)|![](./screenshots/screenshot_2.jpg)|
+|![](./screenshots/screenshot_3.jpg)|![](./screenshots/screenshot_7.jpg)|![](./screenshots/screenshot_2.jpg)|
 
 **划重点，中国男足排名75。**
 
@@ -23,6 +23,7 @@
 * FIFA，男女足世界排名。
 * 深色模式切换。
 * 所有联赛和项目的赛程。
+* NBA和CBA联赛排名。
 
 ## 下一步计划
 

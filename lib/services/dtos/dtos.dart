@@ -4,3 +4,4 @@ export 'schedules_dto.dart';
 export 'live_games_dto.dart';
 export 'news_dto.dart';
 export 'live_games_score_dto.dart';
+export 'rankings_dto.dart';

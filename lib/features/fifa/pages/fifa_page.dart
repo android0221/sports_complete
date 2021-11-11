@@ -30,13 +30,7 @@ class _FifaPageState extends State<FifaPage>
       child: Column(
         children: [
           const GridHeader(
-            titles: [
-              '世界排名',
-              '国家/地区',
-              '排名变化',
-              '积分情况',
-              '积分变化',
-            ],
+            titles: ['世界排名', '国家/地区', '排名变化', '积分情况', '积分变化'],
           ),
           Expanded(
             child: BlocConsumer<WorldRankingCubit, WorldRankingState>(
