@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'features/home/pages/home_page.dart';
 import 'features/settings/blocs/theme_mode/theme_mode_cubit.dart';
@@ -26,6 +27,7 @@ class SportsCompleteApp extends StatelessWidget {
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
+                RefreshLocalizations.delegate,
               ],
               supportedLocales: const [
                 Locale('en', ''),

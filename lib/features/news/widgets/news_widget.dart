@@ -32,7 +32,7 @@ class NewsWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      news.dateTime,
+                      news.formatDateTime,
                       style: Theme.of(context)
                           .textTheme
                           .bodyText2

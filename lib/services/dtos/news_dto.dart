@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 import '../../features/news/entities/entities.dart';
 
 class NewsDto {
@@ -76,18 +74,14 @@ class NewsDto {
       url: 'https://m.zhibo8.cc/news/web$url',
       imageUrl: thumbnail ?? '',
       isTop: tag == '置顶',
-      dateTime: _formatDateTime,
+      dateTime: _dateTime,
     );
   }
 
-  String get _formatDateTime {
+  DateTime? get _dateTime {
     if (createtime == null || createtime!.isEmpty) {
-      return '';
+      return null;
     }
-    final dateTime = DateTime.tryParse(createtime!);
-    if (dateTime == null) {
-      return '';
-    }
-    return DateFormat('MM-dd HH:mm').format(dateTime);
+    return DateTime.tryParse(createtime!);
   }
 }

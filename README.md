@@ -43,3 +43,4 @@
 |[carousel_slider](https://pub.dev/packages/carousel_slider)|轮播图|
 |[webview_flutter](https://pub.dev/packages/webview_flutter)|WebView|
 |[intl](https://pub.dev/packages/intl)|日期格式化|
+|[pull_to_refresh](https://pub.dev/packages/pull_to_refresh)|上拉加载和下拉刷新|

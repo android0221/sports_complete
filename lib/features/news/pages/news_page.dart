@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../services/server_api.dart';
 import '../../../utils/utils.dart';
@@ -18,6 +19,8 @@ class NewsPage extends StatefulWidget {
 
 class _NewsPageState extends State<NewsPage>
     with AutomaticKeepAliveClientMixin {
+  final _controller = RefreshController();
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -29,7 +32,14 @@ class _NewsPageState extends State<NewsPage>
         appBar: AppBar(title: Text(AppLocalizations.of(context)!.news)),
         body: BlocConsumer<NewsCubit, NewsState>(
           listener: (context, state) {
-            if (state is NewsLoadFailure) {
+            if (state is NewsLoadSuccess) {
+              _controller.refreshCompleted();
+              _controller.loadComplete();
+            } else if (state is NewsLoadFailure) {
+              Toast.show(state.message);
+            } else if (state is NewsRefreshFailure) {
+              _controller.refreshFailed();
+              _controller.loadFailed();
               Toast.show(state.message);
             }
           },
@@ -39,14 +49,21 @@ class _NewsPageState extends State<NewsPage>
               final normalNewsList = state.normalNewsList;
               final itemCount =
                   normalNewsList.length + (topNewsList.isNotEmpty ? 1 : 0);
-              return ListView.builder(
+              return SmartRefresher(
+                controller: _controller,
+                enablePullUp: true,
+                onRefresh: () => context.read<NewsCubit>().refresh(),
+                onLoading: () => context.read<NewsCubit>().loadMore(),
+                child: ListView.builder(
                   itemBuilder: (_, index) => index == 0
                       ? NewsCarouselSlider(topNewsList)
                       : NewsWidget(
                           normalNewsList[
                               index - (topNewsList.isNotEmpty ? 1 : 0)],
                         ),
-                  itemCount: itemCount);
+                  itemCount: itemCount,
+                ),
+              );
             }
             if (state is NewsLoadInProgress) {
               return const Loading();
@@ -65,4 +82,10 @@ class _NewsPageState extends State<NewsPage>
 
   @override
   bool get wantKeepAlive => true;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }
